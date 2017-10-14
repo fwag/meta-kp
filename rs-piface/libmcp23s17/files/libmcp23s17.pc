@@ -1,0 +1,9 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+includedir=${prefix}/include
+libdir=${exec_prefix}/lib
+Name: libmcp23s17
+Description: The IO expander library
+Version: 1.0
+Cflags: -I${includedir}/pifacedigital
+Libs: -L${libdir} libmcp23s17.a
