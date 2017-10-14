@@ -16,31 +16,20 @@ This layer depends on:
   layers: meta
   branch: master
 
-  URI: git://git.yoctoproject.org/xxxx
-  layers: xxxx
-  branch: master
-
-
-Patches
-=======
-
-Please submit any patches against the meta-kp layer to the
-xxxx mailing list (xxxx@zzzz.org) and cc: the maintainer:
-
-Maintainer: XXX YYYYYY <xxx.yyyyyy@zzzzz.com>
+  URI: https://github.com/agherzan/meta-raspberrypi
+  layers: meta
+  branch: pyro
 
 
 Table of Contents
 =================
 
   I. Adding the meta-kp layer to your build
- II. Misc
+ II. Recipes
 
 
 I. Adding the meta-kp layer to your build
 =================================================
-
---- replace with specific instructions for the meta-kp layer ---
 
 In order to use this layer, you need to make the build system aware of
 it.
@@ -58,7 +47,18 @@ other layers needed. e.g.:
     "
 
 
-II. Misc
+II. Recipes
 ========
 
---- replace with specific information about the meta-kp layer ---
+recipes-example: example of a static library and relative application taken from the book Embedded Linux Projects Using Yocto Project Cookbook
+
+rs-piface: first version of the pifacedigital library done without GIT and Makefiles
+
+recipes-piface: version with GIT and Makefiles
+
+To have the pifacedigital tool inside the final rpi-basic-image use
+IMAGE_INSTALL_append = " \
+    libpifacedigital \
+"
+
+
